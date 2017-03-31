@@ -24,7 +24,7 @@ This program accepts user numerical input and returns all of the numbers from 1 
 | Program replaces numbers divisible by 3 with "ping" | 3 | 1, 2, ping |
 | Program replaces numbers divisible by 5 with "pong" | 6 | 1, 2, ping, 4, pong, 6 |
 | Program replaces number divisible by 15 with ping-pong" | 16 | ...11, ping, 13, 14, ping-pong, 16 |
-| Program should accept new numbers repeatedly | | |
+| Program should accept new numbers repeatedly | submit | new values |
 
 
 ## Known Bugs

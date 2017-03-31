@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+// Back-end logic:
   $("form#userInput").submit(function(event) {
     $(".panel").show();
     $("#game").show();
@@ -8,8 +10,9 @@ $(document).ready(function() {
     for (numberOut = 1; numberOut <= userInput; numberOut++) {
       ArrayIn.push(numberOut);
     }
-      event.preventDefault();
 
+// Front-end logic:
+    event.preventDefault();
     ArrayIn.forEach(function(numberOut) {
     if (numberOut >0 && numberOut % 15 === 0) {
       var numberOut = "ping-pong"
@@ -20,13 +23,6 @@ $(document).ready(function() {
     } else {}
 
     $("#numberList").append("<li>" + numberOut + "</li>");
-
-      // $("#reverse").click(function() {
-      //   $("#numberList").reverse(.append("<li>" + numberOut + "</li>"))
-      //   // $("#result").text(reversedNumbers);
-      // });
+    });
   });
-
-
-});
 });

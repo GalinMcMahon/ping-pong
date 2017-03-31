@@ -26,4 +26,7 @@ $(document).ready(function() {
       $("#numberList").append("<li>" + numberOut + "</li>");
     });
   });
+    $("form#userInput").submit(function(event) {
+      document.getElementById("form#userInput").reset()
+    });
 });

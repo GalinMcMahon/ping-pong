@@ -11,11 +11,13 @@ $(document).ready(function() {
         event.preventDefault();
 
     ArrayIn.forEach(function(numberOut) {
-      if (numberOut % 3 === 0) {
-        var numberOut = "ping"
+      if (numberOut % 15 === 0) {
+        var numberOut = "ping-pong"
       } else if (numberOut % 5 === 0) {
         var numberOut = "pong"
-      } else{}
+      } else if (numberOut % 3 === 0) {
+        var numberOut = "ping"
+      } else {}
         console.log(numberOut);
     });
   });

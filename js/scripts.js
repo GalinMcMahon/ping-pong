@@ -1,5 +1,7 @@
 $(document).ready(function() {
   $("form#userInput").submit(function(event) {
+    $(".panel").show();
+    $("#game").show();
     var userInput = $("input#numberInput").val();
     var numberOut = 1;
     var ArrayIn = []
@@ -18,6 +20,13 @@ $(document).ready(function() {
     } else {}
 
     $("#numberList").append("<li>" + numberOut + "</li>");
-    });
+
+      // $("#reverse").click(function() {
+      //   $("#numberList").reverse(.append("<li>" + numberOut + "</li>"))
+      //   // $("#result").text(reversedNumbers);
+      // });
   });
+
+
+});
 });

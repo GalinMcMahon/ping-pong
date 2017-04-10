@@ -1,32 +1,36 @@
 $(document).ready(function() {
 
-// Back-end logic:
-  $("form#userInput").submit(function(event) {
-    $("#numberList").empty()
+  // Back-end logic:
+  var numberOut = 1;
+  var arrayIn = []
+  var pingGo = (function() {
+    $("#numberList").empty();
     $(".panel").show();
     $("#game").show();
+    arrayIn.length = 0;
     var userInput = parseInt($("input#numberInput").val());
-    var numberOut = 1;
-    var ArrayIn = []
     for (numberOut = 1; numberOut <= userInput; numberOut++) {
-      ArrayIn.push(numberOut);
+      arrayIn.push(numberOut);
     }
+  });
 
-// Front-end logic:
-    event.preventDefault();
-    ArrayIn.forEach(function(numberOut) {
+  var runArray = (function() {
+    arrayIn.forEach(function(numberOut) {
       if (numberOut >0 && numberOut % 15 === 0) {
         var numberOut = "ping-pong"
-    } else if (numberOut > 1 && numberOut % 5 === 0) {
-      var numberOut = "pong"
-    } else if (numberOut >1 && numberOut % 3 === 0) {
-      var numberOut = "ping"
-    } else {}
-
+      } else if (numberOut > 1 && numberOut % 5 === 0) {
+        var numberOut = "pong"
+      } else if (numberOut >1 && numberOut % 3 === 0) {
+        var numberOut = "ping"
+      } else {}
       $("#numberList").append("<li>" + numberOut + "</li>");
     });
   });
-    $("form#userInput").submit(function(event) {
-      document.getElementById("form#userInput").reset()
-    });
+
+// Front-end logic:
+  $("form#userInput").submit(function(event) {
+      pingGo();
+      runArray();
+      event.preventDefault();
+  });
 });

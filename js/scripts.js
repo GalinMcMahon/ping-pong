@@ -1,11 +1,9 @@
-$(document).ready(function() {
 
   // Back-end logic:
   var numberOut = 1;
   var arrayIn = []
-  var pingGo = (function() {
+  var pingGo = (function(userInput) {
     arrayIn.length = 0;
-    var userInput = parseInt($("input#numberInput").val());
     for (numberOut = 1; numberOut <= userInput; numberOut++) {
       var x;
       if (numberOut >0 && numberOut % 15 === 0) {
@@ -19,17 +17,19 @@ $(document).ready(function() {
       }
       arrayIn.push(x);
     }
-
     return arrayIn;
   });
 
 
 // Front-end logic:
+$(document).ready(function() {
+
   $("form#userInput").submit(function(event) {
-      $("#numberList").empty();
-      $(".panel").show();
-      $("#game").show();
-      var output = pingGo();
+    $("#numberList").empty();
+    $(".panel").show();
+    $("#game").show();
+    var userInput = parseInt($("input#numberInput").val());
+    var output = pingGo(userInput);
       for (var i=0; i<output.length; i++)
          $("#numberList").append("<li>" + output[i] + "</li>")
       event.preventDefault();

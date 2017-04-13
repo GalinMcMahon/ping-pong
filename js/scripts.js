@@ -29,9 +29,9 @@ $(document).ready(function() {
     $(".panel").show();
     $("#game").show();
     var userInput = parseInt($("input#numberInput").val());
-    alert(pingGo(userInput));
+    pingGo(userInput);
     for (var i=0; i<arrayIn.length; i++)
-    $("#numberList").append("<li>" + arrayIn[i] + "</li>")
+      $("#numberList").append("<li>" + arrayIn[i] + "</li>")
       event.preventDefault();
   });
 });
